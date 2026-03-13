@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/tiffanym/public_html/
+    - export DEPLOYPATH=/home/tiffanym/public_html/portfolio
     - /bin/cp -R * $DEPLOYPATH
