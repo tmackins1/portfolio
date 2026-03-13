@@ -85,8 +85,6 @@
     }
   }
 
-  .logoLink {
-  }
   .logo {
     width: calc(70 / 16 * 1rem);
     &:hover {
