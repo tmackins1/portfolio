@@ -29,34 +29,151 @@
         </a>
         <nav>
           <ul class="navLinks">
-            <li class="navItem"><a href="#main">Projects</a></li>
-            <li class="navItem"><a href="#main">About</a></li>
-            <li class="navItem"><a href="#main">Contact</a></li>
+            <li class="navItem"><a href="#projects">Projects</a></li>
+            <li class="navItem"><a href="#about">About</a></li>
+            <li class="navItem"><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main id="main">
       <div class="wrapper">
-        <h1>Hello, here is a website</h1>
-        <p>
-          Welcome to my portfolio website. Here you can find information about
-          my projects, skills, and contact details.
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo et
-          porro sequi cum vel itaque numquam, autem natus, impedit quos
-          distinctio quo doloremque fugit consequatur voluptates totam doloribus
-          labore, harum dolores optio iure expedita voluptas? Alias aperiam
-          aspernatur autem ipsum dolorum quisquam dolor in, ipsam distinctio?
-          Asperiores ex tenetur quod dolorem neque mollitia provident ducimus,
-          modi ullam porro quo optio perspiciatis pariatur ipsum delectus error
-          commodi? Reprehenderit excepturi iure, quaerat obcaecati praesentium
-          cumque autem ipsa, facilis, repudiandae mollitia delectus voluptatibus
-          doloremque culpa aspernatur. Ipsum porro laudantium, consequuntur
-          magni saepe possimus amet, assumenda dicta iste ratione, ut expedita?
-          Deserunt, quos magni.
-        </p>
+        <!-- HERO SECTION -->
+        <section class="heroWrapper">
+          <div class="hero-content">
+            <span class="tagline">Instructional & Web Designer</span>
+
+            <h1>Hello, I'm Tiffany Mackins.</h1>
+
+            <p class="description">
+              I design and build websites and learning experiences that are
+              engaging, accessible, and user-friendly. I am passionate about
+              creating digital products that are not only visually appealing but
+              also functional and inclusive.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#" class="btn primary">Projects</a>
+              <a href="#" class="btn secondary">LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-blob">
+              <svg viewBox="0 0 200 200" class="blob">
+                <path
+                  fill="#F5B82E"
+                  d="M34.2,-56.9C43.4,-47.3,49.4,-36.3,57,-24.6C64.7,-12.8,74,-0.4,76,13.5C77.9,27.4,72.5,42.7,62.4,53.6C52.2,64.4,37.4,70.7,22.1,75.2C6.7,79.6,-9.1,82.3,-19.3,75C-29.5,67.8,-33.9,50.5,-43.6,38.4C-53.3,26.2,-68.2,19.1,-71.9,8.9C-75.5,-1.3,-68.1,-14.5,-59.6,-24.8C-51.1,-35.1,-41.6,-42.5,-31.5,-51.7C-21.4,-60.9,-10.7,-71.9,0.9,-73.4C12.5,-74.8,25,-66.6,34.2,-56.9Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+
+              <img src="/img/portfolio_selfie.png" alt="hero image" />
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="projectsSection" id="projects">
+          <div class="projectsWrapper">
+            <h2 class="visually-hidden">Projects</h2>
+            <h2 class="sectionTitle">Projects</h2>
+            <div class="projectsGrid">
+              <article class="projectCard">
+                <img src="/img/criticalthinking_lms.png" alt="Project 1" />
+                <h3>Critical Thinking eLearning Module</h3>
+                <p>Short description of Project 1.</p>
+                <a href="#" class="btn primary">View Project</a>
+              </article>
+              <article class="projectCard">
+                <img src="/img/criticalthinking_lms.png" alt="Project 2" />
+                <h3>Critical Thinking eLearning Module</h3>
+                <p>Short description of Project 2.</p>
+                <a href="#" class="btn primary">View Project</a>
+              </article>
+              <article class="projectCard">
+                <img src="/img/criticalthinking_lms.png" alt="Project 3" />
+                <h3>Project 3</h3>
+                <p>Short description of Project 3.</p>
+                <a href="#" class="btn primary">View Project</a>
+              </article>
+              <article class="projectCard">
+                <img src="/img/criticalthinking_lms.png" alt="Project 3" />
+                <h3>Project 3</h3>
+                <p>Short description of Project 3.</p>
+                <a href="#" class="btn primary">View Project</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="aboutSection" id="about">
+          <div class="aboutWrapper">
+            <h2 class="visually-hidden">About Section</h2>
+            <h2 class="sectionTitle">About Me</h2>
+            <div class="aboutContent">
+              <article class="leftContent">
+                <h3>Who's Behind This?</h3>
+                <p>
+                  I'm Tiffany Mackins, a Charlotte-based Instructional and Web
+                  Designer with a passion for creating engaging and accessible
+                  digital experiences. With a background in both design and
+                  development, I specialize in crafting websites and learning
+                  modules that are not only visually appealing but also
+                  user-friendly and inclusive. I thrive on collaborating with
+                  clients and teams to bring ideas to life and solve complex
+                  problems through design and development. Always eager to learn
+                  new skills and stay up-to-date with the latest trends and
+                  technologies in the field, I am committed to delivering
+                  high-quality digital products that make a positive impact.
+                </p>
+              </article>
+              <article class="rightContent"></article>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contactSection" id="contact">
+          <div class="contactWrapper">
+            <h2 class="visually-hidden">Contact Section</h2>
+            <h2 class="sectionTitle">Get In Touch</h2>
+            <div class="formWrapper">
+              <iframe
+                data-tally-src="https://tally.so/embed/44kWPA?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="313"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="Get In Touch"
+              ></iframe>
+              <script>
+                var d = document,
+                  w = "https://tally.so/widgets/embed.js",
+                  v = function () {
+                    "undefined" != typeof Tally
+                      ? Tally.loadEmbeds()
+                      : d
+                          .querySelectorAll("iframe[data-tally-src]:not([src])")
+                          .forEach(function (e) {
+                            e.src = e.dataset.tallySrc;
+                          });
+                  };
+                if ("undefined" != typeof Tally) v();
+                else if (d.querySelector('script[src="' + w + '"]') == null) {
+                  var s = d.createElement("script");
+                  ((s.src = w),
+                    (s.onload = v),
+                    (s.onerror = v),
+                    d.body.appendChild(s));
+                }
+              </script>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
     <footer>
