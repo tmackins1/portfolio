@@ -74,7 +74,7 @@
   h1 {
     font-size: var(--fs-42);
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= calc(800 / 16 * 1rem)) {
       font-size: var(--fs-72);
     }
   }
@@ -111,7 +111,7 @@
     font-size: var(--fs-16);
     font-weight: 200;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= calc(800 / 16 * 1rem)) {
       font-size: var(--fs-18);
     }
   }
@@ -165,7 +165,7 @@
     align-items: center;
     padding-block: 8px;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= calc(800 / 16 * 1rem)) {
       padding-block: 15px;
     }
   }
@@ -176,7 +176,7 @@
       opacity: 0.8;
     }
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= calc(800 / 16 * 1rem)) {
       width: calc(128 / 16 * 1rem);
     }
   }
@@ -210,7 +210,7 @@
     align-items: center;
     padding: 15px 10px;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= calc(800 / 16 * 1rem)) {
       padding: 0 60px;
       grid-template-columns: 1fr 1fr;
     }
@@ -224,7 +224,7 @@
     letter-spacing: 0.1em;
     mix-blend-mode: multiply;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= calc(800 / 16 * 1rem)) {
       mix-blend-mode: none;
     }
   }
@@ -274,7 +274,7 @@
   .sectionTitle {
     font-size: var(--fs-42);
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-align: center;
 
     &::after {
@@ -289,15 +289,22 @@
   .projectsWrapper,
   .aboutWrapper,
   .contactWrapper {
-    width: min(calc(100% - 48px), calc(1200 / 16 * 1rem));
     margin-inline: auto;
     padding: 0 24px;
+
+    @media (width >= calc(600 / 16 * 1rem)) {
+      width: min(calc(100% - 48px), calc(1200 / 16 * 1rem));
+    }
   }
 
   .projectsSection,
   .aboutSection,
   .contactSection {
-    padding-block: 40px 80px;
+    padding-block: 40px 10px;
+
+    @media (width >= calc(800 / 16 * 1rem)) {
+      padding-block: 40px 80px;
+    }
   }
   /*** PROJECTS SECTION ***/
 
@@ -307,8 +314,7 @@
     gap: 40px;
     padding: 15px 10px;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
-      padding: 0 40px;
+    @media (width >= calc(800 / 16 * 1rem)) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -352,15 +358,85 @@
   .aboutSection {
     background: #f9f9f9;
   }
+  .aboutWrapper {
+    min-height: 31vw;
+  }
+
+  .image-overlap {
+    xpadding: 100px 20px;
+    display: grid;
+    xjustify-content: center;
+    xoverflow: hidden;
+  }
+
+  .image-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-wrap img {
+    max-width: 60%;
+    border-radius: 16px;
+    position: absolute;
+  }
+
+  /* LEFT IMAGE */
+  .img-left {
+    left: 0;
+    transform: translateX(-100px);
+    z-index: 2;
+    top: 80px;
+  }
+
+  /* RIGHT IMAGE */
+  .img-right {
+    right: 0;
+    top: 0;
+    transform: translateX(100px);
+    z-index: 1;
+    animation-delay: 0.3s;
+    min-height: 100%;
+  }
+
+  /* ANIMATIONS */
+  @keyframes slideInLeft {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .img-left,
+  .img-right {
+    animation: none;
+  }
+
+  .image-wrap.animate .img-left {
+    animation: slideInLeft 1s ease forwards;
+  }
+
+  .image-wrap.animate .img-right {
+    animation: slideInRight 1s ease forwards;
+    animation-delay: 0.3s;
+  }
 
   /*** CONTACT SECTION ***/
   .formWrapper {
-    max-width: 50%;
+    max-width: calc(600 / 16 * 1rem);
     margin: 0 auto;
     padding: 15px 10px;
 
     @media (width >= calc(600 / 16 * 1rem)) {
       padding: 0 40px;
+      max-width: calc(800 / 16 * 1rem);
     }
   }
 
