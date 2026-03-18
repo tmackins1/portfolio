@@ -59,12 +59,14 @@
     --color-text-light: var(--c-white);
     --color-main-bg: var(--c-grey);
   }
-
+  body,
+  html {
+    overflow-x: hidden;
+  }
   body {
     font-family: "Nunito", Arial, Helvetica, sans-serif;
     background: var(--color-main-bg);
     color: var(--color-text-primary);
-    overflow-x: hidden;
   }
 
   h1 {
