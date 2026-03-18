@@ -51,12 +51,12 @@
     --c-black: hsl(0, 0%, 14%);
     --c-drkgrey: hsl(0, 1%, 20%);
     --c-mustard: hsl(42, 91%, 57%);
+    --c-drkmustard: hsl(42, 100%, 38%);
     --c-grey: #f9f9f9;
 
     --color-main-bg: var(--c-white);
     --color-text-primary: var(--c-drkgrey);
     --color-text-light: var(--c-white);
-    --color-header-bg: var(--c-mustard);
     --color-main-bg: var(--c-grey);
   }
 
@@ -72,9 +72,9 @@
   }
 
   h1 {
-    font-size: var(--fs-42);
+    font-size: var(--fs-32);
 
-    @media (width >= calc(800 / 16 * 1rem)) {
+    @media (width >= calc(900 / 16 * 1rem)) {
       font-size: var(--fs-72);
     }
   }
@@ -140,15 +140,21 @@
   }
 
   .primary {
-    background: #f4b42a;
+    background: var(--c-mustard);
     border: none;
-    color: var(--color-text-light);
+    color: var(--color-text-primary);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: var(--c-drkmustard);
+      color: var(--color-text-light);
+    }
   }
 
   .secondary {
-    border: 2px solid var(--c-mustard);
+    border: 2px solid var(--c-drkmustard);
     background: transparent;
-    color: var(--c-mustard);
+    color: var(--c-drkmustard);
   }
 }
 
@@ -206,23 +212,34 @@
 
   .heroWrapper {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template: 1fr;
     align-items: center;
     padding: 15px 10px;
+    max-width: 85rem;
 
     @media (width >= calc(800 / 16 * 1rem)) {
       padding: 0 60px;
-      grid-template-columns: 1fr 1fr;
+      grid-template: repeat(1, [row] 1fr) / repeat(2, [col] 1fr);
+      max-width: 100rem;
+      margin: 0 auto;
     }
   }
 
   .tagline {
     font-size: var(--fs-14);
     font-weight: 700;
-    color: var(--c-mustard);
+    color: var(--c-drkgrey);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    mix-blend-mode: multiply;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: var(--c-mustard);
+      margin-bottom: 10px;
+    }
 
     @media (width >= calc(800 / 16 * 1rem)) {
       mix-blend-mode: none;
@@ -231,6 +248,9 @@
 
   .hero-content {
     line-height: 2;
+    -webkit-animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   .hero-buttons {
@@ -244,7 +264,7 @@
     right: -25vw;
     top: -40vw;
     width: max(85vw, 800px);
-    animation: float 8s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
     z-index: -1;
 
     @media (width >= calc(950 / 16 * 1rem)) {
@@ -254,9 +274,17 @@
   }
 
   .hero_img {
-    width: min(32vw, 500px);
-    float: right;
+    width: min(55vw, 500px);
+    float: none;
     margin: 2rem auto;
+    -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+    @media (width >= calc(800 / 16 * 1rem)) {
+      width: min(32vw, 500px);
+      float: right;
+    }
   }
 
   @keyframes float {
@@ -355,81 +383,89 @@
   }
 
   /*** ABOUT SECTION ***/
-  .aboutSection {
-    background: #f9f9f9;
+  .aboutContent {
+    align-items: center;
   }
   .aboutWrapper {
-    min-height: 31vw;
+    xmin-height: 31vw;
   }
 
-  .image-overlap {
-    xpadding: 100px 20px;
+  .overlappingImages {
     display: grid;
-    xjustify-content: center;
-    xoverflow: hidden;
+    grid-template: repeat(6, [row] 1fr) / repeat(12, [col] 1fr);
+    grid-gap: 20px;
+    max-width: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+    xmin-height: 90vh;
   }
 
-  .image-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
+  .rightImg,
+  .leftImg {
+    align-items: center;
+    justify-items: center;
+    line-height: 1;
+    display: flex;
   }
 
-  .image-wrap img {
-    max-width: 60%;
-    border-radius: 16px;
-    position: absolute;
-  }
-
-  /* LEFT IMAGE */
-  .img-left {
-    left: 0;
-    transform: translateX(-100px);
+  .rightImg {
+    grid-column: col 2 / span 7;
+    grid-row: row 2 / span 4;
     z-index: 2;
-    top: 80px;
+
+    @media (max-width: 700px) {
+      grid-column: col 1 / span 8;
+      grid-row: row 2 / span 3;
+    }
   }
 
-  /* RIGHT IMAGE */
-  .img-right {
-    right: 0;
-    top: 0;
-    transform: translateX(100px);
+  .leftImg {
+    grid-column: col 5 / span 8;
+    grid-row: row 1 / span 6;
     z-index: 1;
-    animation-delay: 0.3s;
-    min-height: 100%;
-  }
 
-  /* ANIMATIONS */
-  @keyframes slideInLeft {
-    to {
-      transform: translateX(0);
-      opacity: 1;
+    @media (max-width: 700px) {
+      grid-column: col 5 / 13;
+      grid-row: row 1 / 6;
     }
   }
 
-  @keyframes slideInRight {
-    to {
-      transform: translateX(0);
-      opacity: 1;
+  .overlappingImages img {
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95);
+    xvisibility: hidden;
+    max-height: calc(90vh - 40px);
+
+    @media (max-width: 700px) {
+      height: 100%;
+      max-height: 100%;
     }
   }
 
-  .img-left,
-  .img-right {
+  .top-image,
+  .bottom-image {
     animation: none;
   }
 
-  .image-wrap.animate .img-left {
-    animation: slideInLeft 1s ease forwards;
+  .animate .top-image {
+    -webkit-animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
-  .image-wrap.animate .img-right {
-    animation: slideInRight 1s ease forwards;
-    animation-delay: 0.3s;
+  .animate .bottom-image {
+    -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 0.1s;
   }
 
   /*** CONTACT SECTION ***/
-  .formWrapper {
+  .formWrapper,
+  .contactInfo {
     max-width: calc(600 / 16 * 1rem);
     margin: 0 auto;
     padding: 15px 10px;
@@ -440,11 +476,11 @@
     }
   }
 
-  .contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .contactInfo {
+    padding-block-end: 40px;
+    text-align: center;
   }
+
   .contactIcons {
     display: flex;
     gap: 20px;
@@ -453,10 +489,16 @@
   .contactIcons svg {
     height: 60px;
     transition: filter 0.3s ease;
-    fill: var(--c-mustard);
+    fill: var(--c-black);
 
     &:hover {
     }
+  }
+
+  .footerWrapper {
+    background-color: var(--c-mustard);
+    padding: 40px 15px;
+    text-align: center;
   }
 }
 
@@ -478,5 +520,74 @@
       padding: 10px;
       border: 1px solid;
     }
+  }
+}
+
+/**** ANIMATIONS ****/
+
+/* ----------------------------------------------
+ * Generated by Animista on 2026-3-17 23:8:51
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
   }
 }

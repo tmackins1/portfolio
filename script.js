@@ -1,7 +1,5 @@
-console.log("Hello, here is a website");
-
 // Scroll animation for project images
-const section = document.querySelector(".image-wrap");
+const section = document.querySelector(".overlappingImages");
 
 const observer = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
@@ -10,3 +8,6 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 observer.observe(section);
+
+// Get the element by its ID and set its text content to the current year
+document.getElementById("currentYear").textContent = new Date().getFullYear();

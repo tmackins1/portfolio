@@ -52,10 +52,7 @@
               also functional and inclusive.
             </p>
 
-            <div class="hero-buttons">
-              <a href="#" class="btn primary">Projects</a>
-              <a href="#" class="btn secondary">LinkedIn</a>
-            </div>
+            
           </div>
 
           <div class="hero-visual">
@@ -67,12 +64,12 @@
                   transform="translate(100 100)"
                 />
               </svg>
+              <img
+                src="/img/portfolio_img.png"
+                class="hero_img"
+                alt="hero image"
+              />
             </div>
-            <img
-              src="/img/portfolio_img.png"
-              class="hero_img"
-              alt="hero image"
-            />
           </div>
         </section>
 
@@ -141,6 +138,7 @@
             <div class="aboutContent">
               <div class="leftContent">
                 <h3>Who's Behind This?</h3>
+                <br />
                 <p>
                   I'm Tiffany Mackins, a Charlotte-based Instructional and Web
                   Designer with a passion for creating engaging and accessible
@@ -157,20 +155,20 @@
                   products that make a positive impact.
                 </p>
               </div>
-              <div class="rightContent">
-                <div class="image-overlap">
-                  <div class="image-wrap">
-                    <img
-                      src="/img/switzerland.jpg"
-                      alt="image of a person jumping in the air in Switzerland"
-                      class="img-left"
-                    />
-                    <img
-                      src="/img/london.jpg"
-                      alt="image standing in London station"
-                      class="img-right"
-                    />
-                  </div>
+              <div class="rightContent overlappingImages">
+                <div class="rightImg">
+                  <img
+                    src="/img/switzerland.jpg"
+                    alt="Description of image 1"
+                    class="image-overlap top-image"
+                  />
+                </div>
+                <div class="leftImg">
+                  <img
+                    src="/img/london.jpg"
+                    alt="Description of image 2"
+                    class="image-overlap bottom-image"
+                  />
                 </div>
               </div>
             </div>
@@ -265,7 +263,15 @@
       </div>
     </main>
     <footer>
-      <h2 class="visually-hidden">Footer</h2>
+      <section class="footer" id="footer">
+          <div class="footerWrapper">
+            <h2 class="visually-hidden">Footer</h2>
+            <div class="copyright">
+            <p class="footerText">
+              &copy; <span id="currentYear"></span>  Tiffany Mackins. All rights reserved.
+            </p>
+            </div>
+          </div>
     </footer>
   </body>
 </html>
