@@ -11,3 +11,13 @@ observer.observe(section);
 
 // Get the element by its ID and set its text content to the current year
 document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+// simple smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    document
+      .querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
