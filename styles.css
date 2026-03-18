@@ -109,6 +109,7 @@
   p {
     line-height: 1.5;
     font-size: var(--fs-16);
+    font-weight: 200;
 
     @media (width >= calc(600 / 16 * 1rem)) {
       font-size: var(--fs-18);
@@ -205,12 +206,13 @@
 
   .heroWrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     padding: 15px 10px;
 
     @media (width >= calc(600 / 16 * 1rem)) {
-      padding: 0 40px;
+      padding: 0 60px;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -221,7 +223,6 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     mix-blend-mode: multiply;
-    xcolor: var(--c-mustard);
 
     @media (width >= calc(600 / 16 * 1rem)) {
       mix-blend-mode: none;
@@ -229,7 +230,6 @@
   }
 
   .hero-content {
-    max-width: 520px;
     line-height: 2;
   }
 
@@ -243,7 +243,7 @@
     position: absolute;
     right: -25vw;
     top: -40vw;
-    width: max(70vw, 800px);
+    width: max(85vw, 800px);
     animation: float 8s ease-in-out infinite;
     z-index: -1;
 
@@ -253,11 +253,10 @@
     }
   }
 
-  .hero-blob img {
-    width: min(24vw, 300px);
-    margin: 0 auto;
-    bottom: 0;
-    xposition: relative;
+  .hero_img {
+    width: min(32vw, 500px);
+    float: right;
+    margin: 2rem auto;
   }
 
   @keyframes float {
@@ -322,15 +321,26 @@
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     align-items: center;
+    text-align: center;
   }
+
+  .cardContent {
+    padding-block: 20px;
+  }
+  .cardContent h3 {
+    font-weight: 600;
+    padding-block-end: 10px;
+  }
+
+  .cardContent p {
+    font-size: var(--fs-16);
+    font-weight: 200;
+  }
+
   .projectCard img {
     height: auto;
     border-radius: 8px;
     margin: 0 auto;
-  }
-  .project-card h3 {
-    font-size: var(--fs-16);
-    font-weight: 600;
   }
 
   .project-card p {
@@ -353,7 +363,27 @@
       padding: 0 40px;
     }
   }
+
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contactIcons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .contactIcons svg {
+    height: 60px;
+    transition: filter 0.3s ease;
+    fill: var(--c-mustard);
+
+    &:hover {
+    }
+  }
 }
+
 @layer utilities {
   /* Hidden class for accessibility */
   .visually-hidden {
