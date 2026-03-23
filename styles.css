@@ -348,8 +348,8 @@
     }
   }
   .projectCard {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr;
     gap: 5px;
     background-color: var(--c-white);
     padding: 20px;
@@ -358,7 +358,7 @@
     justify-content: space-evenly;
 
     @media (width >= calc(800 / 16 * 1rem)) {
-      align-items: center;
+      xalign-items: center;
       text-align: center;
     }
   }
@@ -382,7 +382,6 @@
     max-width: 100%;
     width: 100%;
     max-height: 100%;
-    object-fit: contain;
 
     @media (width >= calc(800 / 16 * 1rem)) {
       max-height: 250px;
